@@ -333,8 +333,9 @@ hr {
   .header .row .logo {
     background-image: url("../img/logo-tall.svg");
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: center top;
-    height: 60px; }
+    height: 90px; }
   .header .row ul li {
     font-family: "Roboto", sans-serif;
     list-style: none;
@@ -346,8 +347,8 @@ hr {
   .episode1 .featured {
     background-image: url("../img/Method_Podcast.png");
     background-repeat: no-repeat;
-    background-position: center top;
     background-size: contain;
+    background-position: center top;
     height: 635px; }
   .episode1 .row .col-md-8 {
     font-family: "Roboto", sans-serif;
@@ -361,18 +362,20 @@ hr {
     .episode1 .row .col-md-8 .featured--profile {
       font-family: "Zilla Slab", serif;
       letter-spacing: 1.9px;
-      color: #5f6368; }
+      color: #5f6368;
+      margin-bottom: 5px; }
 
-.episode2 .episode2__news .news--feed h3 {
+.episode2__news .news--feed h3 {
   font-family: "Montserrat", sans-serif; }
-.episode2 .episode2__news .news--more h3 {
+.episode2__news .news--more h3 {
   font-family: "Roboto", sans-serif;
   color: #4285f4;
   text-align: right; }
-.episode2 .episode2__news .news--feed p, .episode2 .episode2__news .news--more p {
+.episode2__news .news--feed p, .episode2__news .news--more p {
   font-family: "Zilla Slab", serif;
   letter-spacing: 1.9px;
-  color: #5f6368; }
+  color: #5f6368;
+  margin-bottom: 5px; }
 .episode2 .episode2__newsContent .fecha {
   font-family: "Zilla Slab", serif;
   letter-spacing: 1.9px;
@@ -396,16 +399,16 @@ hr {
   .episode2 .episode2__newsContent .news--left .news--image {
     background-image: url("../img/GoogleDesign.jpg");
     background-repeat: no-repeat;
-    background-position: center top;
     background-size: contain;
+    background-position: center top;
     height: 390px; }
 .episode2 .episode2__newsContent .news__newsLetter {
   background-color: #f1f3f4; }
 .episode2 .episode2__newsContent .news--singupimg {
   background-image: url("../img/gdlogo.png");
   background-repeat: no-repeat;
-  background-position: center top;
   background-size: contain;
+  background-position: center top;
   height: 90px; }
 
 .episode3 {
@@ -424,22 +427,38 @@ hr {
     font-family: "Zilla Slab", serif;
     letter-spacing: 1.9px;
     color: #5f6368;
-    margin-bottom: 30px; }
+    margin-bottom: 5px; }
   .episode3 .episode3_image {
-    margin-top: 5%;
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: contain;
-    height: 380px; }
+    margin-top: 5%; }
   .episode3 #episode3_image1 {
-    background-image: url("../img/connectivity_culture_and_cre.max.jpg"); }
+    background-image: url("../img/connectivity_culture_and_cre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 380px; }
   .episode3 #episode3_image2 {
-    background-image: url("../img/building_better_design.jpg"); }
+    background-image: url("../img/building_better_design.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 380px; }
   .episode3 #episode3_image3 {
-    background-image: url("../img/daydream.jpg"); }
+    background-image: url("../img/daydream.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 380px; }
   .episode3 #episode3_image4 {
-    background-image: url("../img/migration.png"); }
+    background-image: url("../img/migration.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 380px; }
   .episode3 #episode3_image5 {
-    background-image: url("../img/quality.jpg"); }
+    background-image: url("../img/quality.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 380px; }
 
 /*# sourceMappingURL=style.css.map */

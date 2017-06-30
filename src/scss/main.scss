@@ -34,7 +34,6 @@ $screen-lg:                  1200px;
   padding-right: ($gutter / 2);
 }
 
-
 @mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px;
@@ -46,7 +45,6 @@ $screen-lg:                  1200px;
     width: $porcentaje*(($columns / $grid-columns));
   }
 }
-
 
 @mixin make-md-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
@@ -90,12 +88,6 @@ $screen-lg:                  1200px;
   @for $i from (1 + 1) through $grid-columns {
     $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
   }
-  // #{$list} {
-  //   position: relative;
-  //   min-height: 1px;
-  //   padding-left:  ($grid-gutter-width / 2);
-  //   padding-right: ($grid-gutter-width / 2);
-  // }
 }
 
 @mixin float-grid-columns($class) {
@@ -109,7 +101,6 @@ $screen-lg:                  1200px;
     float: left;
   }
 }
-
 
 @mixin calc-grid-column($index, $class, $type) {
   @if ($type == width) and ($index > 0) {
@@ -155,7 +146,26 @@ $screen-lg:                  1200px;
 @media (min-width: 1200px) {
   @include make-grid(lg);
 }
-
+//mixin
+@mixin make-image($url, $height, $type, $size) {
+  background-image: url('../img/#{$url}.#{$type}');
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: center top;
+  height: $height;
+}
+@mixin zilla-text {
+  font-family: $zilla-serif;
+  letter-spacing: 1.9px;
+  color: $grey-light;
+  margin-bottom: 5px;
+}
+@mixin roboto-text-grey {
+  font-family: $roboto-sans;
+  color: $grey-text;
+  margin-bottom: 30px;
+  letter-spacing: .4px;
+}
 //style landing page google
 .contenedor{
   width: 94%;
@@ -167,15 +177,13 @@ hr{
   border: 0;
   background-color: $blue;
 }
+
 .header{
   .row{
     margin-top: 2%;
     margin-bottom: 5%;
     .logo{
-      background-image: url('../img/logo-tall.svg');
-      background-repeat: no-repeat;
-      background-position: center top;
-      height: 60px;
+      @include make-image(logo-tall,90px,svg,contain)
     }
     ul{
       li{
@@ -190,11 +198,7 @@ hr{
 .episode1{
   margin-bottom: 5%;
   .featured{
-    background-image: url('../img/Method_Podcast.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-    height: 635px;
+    @include make-image(Method_Podcast,635px,png,contain)
     }
     .row{
       .col-md-8{
@@ -210,16 +214,14 @@ hr{
           color: $grey-text;
         }
         .featured--profile{
-          font-family: $zilla-serif;
-          letter-spacing: 1.9px;
-          color: $grey-light;
+          @include zilla-text;
         }
 
       }
   }
 }
 .episode2{
-  .episode2__news{
+  &__news{
       .news--feed h3{
         font-family: $monserrat-sans;
       }
@@ -229,17 +231,12 @@ hr{
         text-align: right;
       }
       .news--feed p, .news--more p{
-        font-family: $zilla-serif;
-        letter-spacing: 1.9px;
-        color: $grey-light;
+        @include zilla-text;
       }
   }
   .episode2__newsContent{
       .fecha{
-        font-family: $zilla-serif;
-        letter-spacing: 1.9px;
-        color: $grey-light;
-        margin-bottom: 5px;
+        @include zilla-text;
       }
       .news-blue{
         font-family: $roboto-sans;
@@ -260,22 +257,14 @@ hr{
         width: 46%;
         padding-right: 4%;
         .news--image{
-          background-image: url('../img/GoogleDesign.jpg');
-          background-repeat: no-repeat;
-          background-position: center top;
-          background-size: contain;
-          height: 390px;
+          @include make-image(GoogleDesign,390px,jpg,contain)
         }
       }
       .news__newsLetter{
         background-color: $bg-grey-light;
       }
       .news--singupimg{
-        background-image: url('../img/gdlogo.png');
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: contain;
-        height: 90px;
+        @include make-image(gdlogo,90px,png,contain)
       }
   }
 }
@@ -295,32 +284,17 @@ hr{
     letter-spacing: .4px;
   }
   .article-tag{
-    font-family: $zilla-serif;
-    letter-spacing: 1.9px;
-    color: $grey-light;
-    margin-bottom: 30px;
+    @include zilla-text;
   }
   .episode3_image{
     margin-top: 5%;
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: contain;
-    height: 380px;
-  }
-  #episode3_image1{
-    background-image: url('../img/connectivity_culture_and_cre.max.jpg');
-  }
-  #episode3_image2{
-    background-image: url('../img/building_better_design.jpg');
-  }
-  #episode3_image3{
-    background-image: url('../img/daydream.jpg');
-  }
-  #episode3_image4{
-    background-image: url('../img/migration.png');
-  }
-  #episode3_image5{
-    background-image: url('../img/quality.jpg');
   }
 
+  $count:0;
+  @each $images in connectivity_culture_and_cre, building_better_design, daydream, migration, quality{
+    $count: $count +1;
+    #episode3_image#{$count} {
+        @include make-image($images,380px,jpg,cover)
+    }
+  }
 }
