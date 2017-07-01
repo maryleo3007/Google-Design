@@ -234,7 +234,7 @@ h3{
     @include make-image(fb,20px,png,contain,left);
   }
   .tag-image1, .tag-image3{
-      @include make-image(twitter,30px,svg,contain,left);
+    @include make-image(twitter,30px,svg,contain,left);
   }
   $count:0;
   @each $images in design, gallery, Method_Podcast{
