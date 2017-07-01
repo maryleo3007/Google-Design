@@ -1,151 +1,10 @@
 @import 'colors';
 @import 'fonts';
+@import "variable";
+@import "grid";
 @import 'resolutions';
 
-$porcentaje: 100%;
-$grid-columns:              12;
-$grid-gutter-width:         30px;
 
-$screen-xs:                  480px;
-$screen-sm:                  768px;
-$screen-md:                  992px;
-$screen-lg:                  1200px;
-
-@mixin clearfix() {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-@mixin rows($gutter: $grid-gutter-width) {
-  @include clearfix();
-}
-@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  float: left;
-  width: $porcentaje*(($columns / $grid-columns));
-  min-height: 1px;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-}
-
-@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  min-height: 1px;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-
-  @media (min-width: $screen-sm) {
-    float: left;
-    width: $porcentaje*(($columns / $grid-columns));
-  }
-}
-
-@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  min-height: 1px;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-
-  @media (min-width: $screen-md) {
-    float: left;
-    width: $porcentaje*(($columns / $grid-columns));
-  }
-}
-@mixin make-md-column-offset($columns) {
-  @media (min-width: $screen-md) {
-    margin-left: $porcentaje*(($columns / $grid-columns));
-  }
-}
-
-@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  min-height: 1px;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-
-  @media (min-width: $screen-lg) {
-    float: left;
-    width: $porcentaje*(($columns / $grid-columns));
-  }
-}
-
-@mixin make-lg-column-offset($columns) {
-  @media (min-width: $screen-lg) {
-    margin-left: $porcentaje*(($columns / $grid-columns));
-  }
-}
-
-@mixin make-grid-columns() {
-  $list: '';
-  $i: 1;
-  $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
-  @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
-  }
-}
-
-@mixin float-grid-columns($class) {
-  $list: '';
-  $i: 1;
-  $list: ".col-#{$class}-#{$i}";
-  @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .col-#{$class}-#{$i}";
-  }
-  #{$list} {
-    float: left;
-  }
-}
-
-@mixin calc-grid-column($index, $class, $type) {
-  @if ($type == width) and ($index > 0) {
-    .col-#{$class}-#{$index} {
-      width: $porcentaje*(($index / $grid-columns));
-    }
-  }
-
-  @if ($type == offset) {
-    .col-#{$class}-offset-#{$index} {
-      margin-left: $porcentaje*(($index / $grid-columns));
-    }
-  }
-}
-
-
-@mixin loop-grid-columns($columns, $class, $type) {
-  @for $i from 0 through $columns {
-    @include calc-grid-column($i, $class, $type);
-  }
-}
-
-@mixin make-grid($class) {
-  @include float-grid-columns($class);
-  @include loop-grid-columns($grid-columns, $class, width);
-  @include loop-grid-columns($grid-columns, $class, offset);
-}
-
-.row {
-  @include rows();
-}
-
-@include make-grid-columns();
-
-@include make-grid(xs);
-
-@media (min-width: 480px) {
-  @include make-grid(sm);
-}
-@media (min-width: 992px) {
-  @include make-grid(md);
-}
-@media (min-width: 1200px) {
-  @include make-grid(lg);
-}
 //mixin
 @mixin make-image($url, $height, $type, $size) {
   background-image: url('../img/#{$url}.#{$type}');
@@ -166,24 +25,45 @@ $screen-lg:                  1200px;
   margin-bottom: 30px;
   letter-spacing: .4px;
 }
-//style landing page google
-.contenedor{
-  width: 94%;
-  margin: 0 auto;
+@mixin roboto-text-blue-right {
+  font-family: $roboto-sans;
+  color: $blue;
+  text-align: right;
 }
+//style landing page google
 hr{
   width: 100%;
   height: 4px;
   border: 0;
   background-color: $blue;
 }
+h3{
+  font-family: $monserrat-sans;
+  color: $grey-dark;
+}
+.contenedor{
+  width: 94%;
+  margin: 0 auto;
+}
+.tag{
+  @include zilla-text;
+}
+.description{
+  @include roboto-text-grey;
+}
+.text-blue-right{
+  @include roboto-text-blue-right;
+}
+.content-article{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 .header{
   .row{
-    margin-top: 2%;
-    margin-bottom: 5%;
+    margin: 5% auto;
     .logo{
-      @include make-image(logo-tall,90px,svg,contain)
+      @include make-image(logo-tall,60px,svg,contain)
     }
     ul{
       li{
@@ -198,67 +78,47 @@ hr{
 .episode1{
   margin-bottom: 5%;
   .featured{
-    @include make-image(Method_Podcast,635px,png,contain)
+    @include make-image(Method_Podcast,635px,jpg,contain);
+    @media (min-width: $screen-xs) {
+      @include make-image(Method_Podcast,310px,jpg,contain);
+    }
     }
     .row{
       .col-md-8{
-        font-family: $roboto-sans;
-        letter-spacing: .4px;
-        .featured--title{
+        .title{
+          font-size: 2.5em;
           font-family: $monserrat-sans;
-        }
-        .featured--subtitle{
           color: $grey-dark;
+          letter-spacing: .6px;
         }
-        .featured--hosted{
-          color: $grey-text;
+        .subtitle{
+          font-family: $roboto-sans;
+          color: $grey-dark;
+          letter-spacing: .4px;
         }
-        .featured--profile{
-          @include zilla-text;
-        }
-
       }
   }
 }
 .episode2{
-  &__news{
-      .news--feed h3{
-        font-family: $monserrat-sans;
-      }
-      .news--more h3{
-        font-family: $roboto-sans;
-        color: $blue;
-        text-align: right;
-      }
-      .news--feed p, .news--more p{
-        @include zilla-text;
-      }
-  }
-  .episode2__newsContent{
-      .fecha{
-        @include zilla-text;
-      }
+  &__newsContent{
       .news-blue{
         font-family: $roboto-sans;
         color: $blue;
         letter-spacing: .4px;
       }
-      h3{
-        margin-top: 5px;
-        font-family: $monserrat-sans;
-      }
       .news--description{
-        font-family: $roboto-sans;
-        color: $grey-text;
-        margin-bottom: 30px;
-        letter-spacing: .4px;
+        @include roboto-text-grey;
       }
       .news--left{
         width: 46%;
         padding-right: 4%;
         .news--image{
-          @include make-image(GoogleDesign,390px,jpg,contain)
+          @include make-image(GoogleDesign,390px,jpg,contain);
+          @media (min-width: $screen-xs) {
+            @include make-image(GoogleDesign,220px,jpg,contain);
+          }
         }
+
       }
       .news__newsLetter{
         background-color: $bg-grey-light;
@@ -270,30 +130,92 @@ hr{
 }
 .episode3{
   margin-bottom: 7%;
-  h3{
-    margin-top: 5px;
-    font-family: $monserrat-sans;
-  }
   .episode3--left{
     width: 46%;
     padding-right: 4%;
   }
-  .episode3--description{
-    font-family: $roboto-sans;
-    color: $grey-text;
-    letter-spacing: .4px;
-  }
-  .article-tag{
-    @include zilla-text;
-  }
   .episode3_image{
     margin-top: 5%;
   }
-
   $count:0;
   @each $images in connectivity_culture_and_cre, building_better_design, daydream, migration, quality{
     $count: $count +1;
     #episode3_image#{$count} {
+        @include make-image($images,380px,jpg,cover)
+    }
+  }
+}
+.episode4{
+  .episode4_brand{
+    margin-top: 5px;
+    font-family: $monserrat-sans;
+  }
+  .episode4_collection{
+    @include roboto-text-blue-right;
+  }
+  .episode4_fromVR{
+    margin-right: 40px;
+    @include roboto-text-grey;
+  }
+  .episode4_image{
+    margin-right: 40px;
+  }
+  .content-article{
+    margin-right: 40px;
+  }
+  $count:0;
+  @each $images in daydream, expressing{
+    $count: $count +1;
+    #episode4_image#{$count} {
+        @include make-image($images,280px,jpg,contain)
+    }
+  }
+}
+.episode5{
+  margin-bottom: 7%;
+  .episode5--left{
+    width: 46%;
+    padding-right: 4%;
+  }
+  .episode5_image{
+    margin-top: 5%;
+  }
+  $count:0;
+  @each $images in sticky, guide, digital, airbnb, volume{
+    $count: $count +1;
+    #episode5_image#{$count} {
+        @include make-image($images,380px,jpg,cover)
+    }
+  }
+}
+.episode6{
+  .episode6_image{
+    margin-right: 40px;
+  }
+  .content-article{
+    margin-right: 40px;
+  }
+  $count:0;
+  @each $images in design, gallery, Method_Podcast{
+    $count: $count +1;
+    #episode6_image#{$count} {
+        @include make-image($images,250px,jpg,cover)
+    }
+  }
+}
+.episode7{
+  margin-bottom: 7%;
+  .episode7--left{
+    width: 46%;
+    padding-right: 4%;
+  }
+  .episode7_image{
+    margin-top: 5%;
+  }
+  $count:0;
+  @each $images in span, material, design_never{
+    $count: $count +1;
+    #episode7_image#{$count} {
         @include make-image($images,380px,jpg,cover)
     }
   }
