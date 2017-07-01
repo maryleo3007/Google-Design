@@ -1,6 +1,5 @@
 @mixin clearfix() {
-  &:before,
-  &:after {
+  &:before, &:after {
     content: " ";
     display: table;
   }
@@ -77,7 +76,7 @@
   }
 }
 
-@mixin float-grid-columns($class) {
+@mixin float-left-columns($class) {
   $list: '';
   $i: 1;
   $list: ".col-#{$class}-#{$i}";
@@ -104,16 +103,16 @@
 }
 
 
-@mixin loop-grid-columns($columns, $class, $type) {
+@mixin generate-columns($columns, $class, $type) {
   @for $i from 0 through $columns {
     @include calc-grid-column($i, $class, $type);
   }
 }
 
 @mixin make-grid($class) {
-  @include float-grid-columns($class);
-  @include loop-grid-columns($grid-columns, $class, width);
-  @include loop-grid-columns($grid-columns, $class, offset);
+  @include float-left-columns($class);
+  @include generate-columns($grid-columns, $class, width);
+  @include generate-columns($grid-columns, $class, offset);
 }
 
 .row {
