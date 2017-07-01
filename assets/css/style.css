@@ -365,6 +365,13 @@ h3 {
     list-style: none;
     display: inline-block;
     margin-right: 35px; }
+  .header .row .search-icon {
+    background-image: url("../img/search-icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    height: 30px;
+    background-position: right bottom; }
 
 .episode1 {
   margin-bottom: 5%; }
@@ -373,14 +380,21 @@ h3 {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center top;
-    height: 635px; }
-    @media (min-width: 480px) {
+    height: 270px; }
+    @media (min-width: 992px) {
       .episode1 .featured {
         background-image: url("../img/Method_Podcast.jpg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center top;
-        height: 310px; } }
+        height: 645px; } }
+    @media (min-width: 1200px) {
+      .episode1 .featured {
+        background-image: url("../img/Method_Podcast.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        height: 645px; } }
   .episode1 .row .col-md-8 .title {
     font-size: 2.5em;
     font-family: "Montserrat", sans-serif;
@@ -391,111 +405,225 @@ h3 {
     color: #424242;
     letter-spacing: .4px; }
 
-.episode2__newsContent .news-blue {
-  font-family: "Roboto", sans-serif;
-  color: #4285f4;
-  letter-spacing: .4px; }
-.episode2__newsContent .news--description {
-  font-family: "Roboto", sans-serif;
-  color: #414549;
-  margin-bottom: 30px;
-  letter-spacing: .4px; }
-.episode2__newsContent .news--left {
-  width: 46%;
-  padding-right: 4%; }
-  .episode2__newsContent .news--left .news--image {
-    background-image: url("../img/GoogleDesign.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center top;
-    height: 390px; }
-    @media (min-width: 480px) {
-      .episode2__newsContent .news--left .news--image {
-        background-image: url("../img/GoogleDesign.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center top;
-        height: 220px; } }
-.episode2__newsContent .news__newsLetter {
-  background-color: #f1f3f4; }
-.episode2__newsContent .news--singupimg {
-  background-image: url("../img/gdlogo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center top;
-  height: 90px; }
+.episode2 {
+  margin-top: 3%;
+  margin-bottom: 7%; }
+  .episode2 .newsContent__left {
+    width: 46%;
+    padding-right: 4%; }
+    .episode2 .newsContent__left--image {
+      background-image: url("../img/GoogleDesign.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center top;
+      height: 185px; }
+      @media (min-width: 992px) {
+        .episode2 .newsContent__left--image {
+          background-image: url("../img/GoogleDesign.jpg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center top;
+          height: 390px; } }
+      @media (min-width: 1200px) {
+        .episode2 .newsContent__left--image {
+          background-image: url("../img/GoogleDesign.jpg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center top;
+          height: 390px; } }
+  .episode2 .newsContent .news__newsLetter {
+    background-color: #f1f3f4; }
+    .episode2 .newsContent .news__newsLetter--blue {
+      font-family: "Roboto", sans-serif;
+      color: #4285f4;
+      letter-spacing: .4px; }
+    .episode2 .newsContent .news__newsLetter .news--singupimg {
+      background-image: url("../img/gdlogo.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center top;
+      height: 90px; }
 
 .episode3 {
+  margin-top: 3%;
   margin-bottom: 7%; }
-  .episode3 .episode3--left {
+  .episode3__left {
     width: 46%;
     padding-right: 4%; }
   .episode3 .episode3_image {
     margin-top: 5%; }
+  .episode3 .tag-image {
+    background-image: url("../img/icon-redirection.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+    height: 40px; }
   .episode3 #episode3_image1 {
     background-image: url("../img/connectivity_culture_and_cre.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode3 #episode3_image1 {
+        background-image: url("../img/connectivity_culture_and_cre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode3 #episode3_image1 {
+        background-image: url("../img/connectivity_culture_and_cre.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode3 #episode3_image2 {
     background-image: url("../img/building_better_design.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode3 #episode3_image2 {
+        background-image: url("../img/building_better_design.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode3 #episode3_image2 {
+        background-image: url("../img/building_better_design.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode3 #episode3_image3 {
     background-image: url("../img/daydream.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode3 #episode3_image3 {
+        background-image: url("../img/daydream.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode3 #episode3_image3 {
+        background-image: url("../img/daydream.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode3 #episode3_image4 {
     background-image: url("../img/migration.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode3 #episode3_image4 {
+        background-image: url("../img/migration.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode3 #episode3_image4 {
+        background-image: url("../img/migration.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode3 #episode3_image5 {
     background-image: url("../img/quality.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode3 #episode3_image5 {
+        background-image: url("../img/quality.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode3 #episode3_image5 {
+        background-image: url("../img/quality.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
 
-.episode4 .episode4_brand {
-  margin-top: 5px;
-  font-family: "Montserrat", sans-serif; }
-.episode4 .episode4_collection {
-  font-family: "Roboto", sans-serif;
-  color: #4285f4;
-  text-align: right; }
-.episode4 .episode4_fromVR {
-  margin-right: 40px;
-  font-family: "Roboto", sans-serif;
-  color: #414549;
-  margin-bottom: 30px;
-  letter-spacing: .4px; }
-.episode4 .episode4_image {
-  margin-right: 40px; }
-.episode4 .content-article {
-  margin-right: 40px; }
-.episode4 #episode4_image1 {
-  background-image: url("../img/daydream.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center top;
-  height: 280px; }
-.episode4 #episode4_image2 {
-  background-image: url("../img/expressing.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center top;
-  height: 280px; }
+.episode4 {
+  margin-top: 3%;
+  margin-bottom: 5%; }
+  .episode4 .episode4_brand {
+    margin-top: 5px;
+    font-family: "Montserrat", sans-serif; }
+  .episode4 .episode4_collection {
+    font-family: "Roboto", sans-serif;
+    color: #4285f4;
+    text-align: right; }
+  .episode4 .episode4_fromVR {
+    margin-right: 40px;
+    font-family: "Roboto", sans-serif;
+    color: #414549;
+    margin-bottom: 30px;
+    letter-spacing: .4px; }
+  .episode4 .episode4_image {
+    margin-right: 40px; }
+  .episode4 .content-article {
+    margin-right: 40px; }
+  .episode4 #episode4_image1 {
+    background-image: url("../img/daydream.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    height: 90px; }
+    @media (min-width: 992px) {
+      .episode4 #episode4_image1 {
+        background-image: url("../img/daydream.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        height: 280px; } }
+    @media (min-width: 1200px) {
+      .episode4 #episode4_image1 {
+        background-image: url("../img/daydream.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        height: 280px; } }
+  .episode4 #episode4_image2 {
+    background-image: url("../img/expressing.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    height: 90px; }
+    @media (min-width: 992px) {
+      .episode4 #episode4_image2 {
+        background-image: url("../img/expressing.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        height: 280px; } }
+    @media (min-width: 1200px) {
+      .episode4 #episode4_image2 {
+        background-image: url("../img/expressing.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        height: 280px; } }
 
 .episode5 {
+  margin-top: 3%;
   margin-bottom: 7%; }
-  .episode5 .episode5--left {
+  .episode5__left {
     width: 46%;
     padding-right: 4%; }
   .episode5 .episode5_image {
@@ -505,58 +633,182 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode5 #episode5_image1 {
+        background-image: url("../img/sticky.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode5 #episode5_image1 {
+        background-image: url("../img/sticky.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode5 #episode5_image2 {
     background-image: url("../img/guide.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode5 #episode5_image2 {
+        background-image: url("../img/guide.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode5 #episode5_image2 {
+        background-image: url("../img/guide.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode5 #episode5_image3 {
     background-image: url("../img/digital.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode5 #episode5_image3 {
+        background-image: url("../img/digital.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode5 #episode5_image3 {
+        background-image: url("../img/digital.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode5 #episode5_image4 {
     background-image: url("../img/airbnb.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode5 #episode5_image4 {
+        background-image: url("../img/airbnb.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode5 #episode5_image4 {
+        background-image: url("../img/airbnb.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode5 #episode5_image5 {
     background-image: url("../img/volume.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode5 #episode5_image5 {
+        background-image: url("../img/volume.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode5 #episode5_image5 {
+        background-image: url("../img/volume.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
 
 .episode6 .episode6_image {
   margin-right: 40px; }
 .episode6 .content-article {
   margin-right: 40px; }
+.episode6 .tag-image2 {
+  background-image: url("../img/fb.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
+  height: 20px; }
+.episode6 .tag-image1, .episode6 .tag-image3 {
+  background-image: url("../img/twitter.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
+  height: 30px; }
 .episode6 #episode6_image1 {
   background-image: url("../img/design.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  height: 250px; }
+  height: 125px; }
+  @media (min-width: 992px) {
+    .episode6 #episode6_image1 {
+      background-image: url("../img/design.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 250px; } }
+  @media (min-width: 1200px) {
+    .episode6 #episode6_image1 {
+      background-image: url("../img/design.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 250px; } }
 .episode6 #episode6_image2 {
   background-image: url("../img/gallery.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  height: 250px; }
+  height: 125px; }
+  @media (min-width: 992px) {
+    .episode6 #episode6_image2 {
+      background-image: url("../img/gallery.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 250px; } }
+  @media (min-width: 1200px) {
+    .episode6 #episode6_image2 {
+      background-image: url("../img/gallery.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 250px; } }
 .episode6 #episode6_image3 {
   background-image: url("../img/Method_Podcast.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  height: 250px; }
+  height: 125px; }
+  @media (min-width: 992px) {
+    .episode6 #episode6_image3 {
+      background-image: url("../img/Method_Podcast.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 250px; } }
+  @media (min-width: 1200px) {
+    .episode6 #episode6_image3 {
+      background-image: url("../img/Method_Podcast.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 250px; } }
 
 .episode7 {
   margin-bottom: 7%; }
-  .episode7 .episode7--left {
+  .episode7__left {
     width: 46%;
     padding-right: 4%; }
   .episode7 .episode7_image {
@@ -566,18 +818,60 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode7 #episode7_image1 {
+        background-image: url("../img/span.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode7 #episode7_image1 {
+        background-image: url("../img/span.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode7 #episode7_image2 {
     background-image: url("../img/material.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode7 #episode7_image2 {
+        background-image: url("../img/material.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode7 #episode7_image2 {
+        background-image: url("../img/material.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
   .episode7 #episode7_image3 {
     background-image: url("../img/design_never.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 380px; }
+    height: 165px; }
+    @media (min-width: 992px) {
+      .episode7 #episode7_image3 {
+        background-image: url("../img/design_never.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
+    @media (min-width: 1200px) {
+      .episode7 #episode7_image3 {
+        background-image: url("../img/design_never.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        height: 380px; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,11 +6,11 @@
 
 
 //mixin
-@mixin make-image($url, $height, $type, $size) {
+@mixin make-image($url, $height, $type, $size, $position) {
   background-image: url('../img/#{$url}.#{$type}');
   background-repeat: no-repeat;
   background-size: $size;
-  background-position: center top;
+  background-position: $position top;
   height: $height;
 }
 @mixin zilla-text {
@@ -63,7 +63,7 @@ h3{
   .row{
     margin: 5% auto;
     .logo{
-      @include make-image(logo-tall,60px,svg,contain)
+      @include make-image(logo-tall,60px,svg,contain,center)
     }
     ul{
       li{
@@ -73,79 +73,99 @@ h3{
         margin-right: 35px;
       }
     }
+    .search-icon{
+      @include make-image(search-icon,30px,png,contain,right);
+      background-position: right bottom;
+    }
   }
 }
 .episode1{
   margin-bottom: 5%;
   .featured{
-    @include make-image(Method_Podcast,635px,jpg,contain);
-    @media (min-width: $screen-xs) {
-      @include make-image(Method_Podcast,310px,jpg,contain);
-    }
-    }
-    .row{
-      .col-md-8{
-        .title{
-          font-size: 2.5em;
-          font-family: $monserrat-sans;
-          color: $grey-dark;
-          letter-spacing: .6px;
-        }
-        .subtitle{
-          font-family: $roboto-sans;
-          color: $grey-dark;
-          letter-spacing: .4px;
-        }
+      @include make-image(Method_Podcast,270px,jpg,contain,center);
+      @media (min-width: $screen-md) {
+        @include make-image(Method_Podcast,645px,jpg,contain,center);
       }
+      @media (min-width: $screen-lg) {
+        @include make-image(Method_Podcast,645px,jpg,contain,center);
+      }
+  }
+  .row{
+    .col-md-8{
+      .title{
+        font-size: 2.5em;
+        font-family: $monserrat-sans;
+        color: $grey-dark;
+        letter-spacing: .6px;
+      }
+      .subtitle{
+        font-family: $roboto-sans;
+        color: $grey-dark;
+        letter-spacing: .4px;
+      }
+    }
   }
 }
 .episode2{
-  &__newsContent{
-      .news-blue{
-        font-family: $roboto-sans;
-        color: $blue;
-        letter-spacing: .4px;
-      }
-      .news--description{
-        @include roboto-text-grey;
-      }
-      .news--left{
+  margin-top: 3%;
+  margin-bottom: 7%;
+  .newsContent{
+      &__left{
         width: 46%;
         padding-right: 4%;
-        .news--image{
-          @include make-image(GoogleDesign,390px,jpg,contain);
-          @media (min-width: $screen-xs) {
-            @include make-image(GoogleDesign,220px,jpg,contain);
+        &--image{
+          @include make-image(GoogleDesign,185px,jpg,contain,center);
+          @media (min-width: $screen-md) {
+            @include make-image(GoogleDesign,390px,jpg,contain,center);
+          }
+          @media (min-width: $screen-lg) {
+            @include make-image(GoogleDesign,390px,jpg,contain,center);
           }
         }
-
       }
       .news__newsLetter{
         background-color: $bg-grey-light;
-      }
-      .news--singupimg{
-        @include make-image(gdlogo,90px,png,contain)
+        &--blue{
+          font-family: $roboto-sans;
+          color: $blue;
+          letter-spacing: .4px;
+        }
+        .news--singupimg{
+          @include make-image(gdlogo,90px,png,contain,center)
+        }
       }
   }
 }
 .episode3{
+  margin-top: 3%;
   margin-bottom: 7%;
-  .episode3--left{
+  &__left{
     width: 46%;
     padding-right: 4%;
   }
   .episode3_image{
     margin-top: 5%;
   }
+  .tag-image{
+    @include make-image(icon-redirection,40px,png,contain,left);
+  }
   $count:0;
   @each $images in connectivity_culture_and_cre, building_better_design, daydream, migration, quality{
     $count: $count +1;
     #episode3_image#{$count} {
-        @include make-image($images,380px,jpg,cover)
+        @include make-image($images,165px,jpg,cover,center);
+        @media (min-width: $screen-md) {
+          @include make-image($images,380px,jpg,cover,center);
+        }
+        @media (min-width: $screen-lg) {
+          @include make-image($images,380px,jpg,cover,center);
+        }
     }
   }
 }
 .episode4{
+  margin-top: 3%;
+  margin-bottom: 5%;
   .episode4_brand{
     margin-top: 5px;
     font-family: $monserrat-sans;
@@ -167,13 +187,20 @@ h3{
   @each $images in daydream, expressing{
     $count: $count +1;
     #episode4_image#{$count} {
-        @include make-image($images,280px,jpg,contain)
+        @include make-image($images,90px,jpg,contain,center);
+        @media (min-width: $screen-md) {
+          @include make-image($images,280px,jpg,contain,center);
+        }
+        @media (min-width: $screen-lg) {
+          @include make-image($images,280px,jpg,contain,center);
+        }
     }
   }
 }
 .episode5{
+  margin-top: 3%;
   margin-bottom: 7%;
-  .episode5--left{
+  &__left{
     width: 46%;
     padding-right: 4%;
   }
@@ -184,7 +211,13 @@ h3{
   @each $images in sticky, guide, digital, airbnb, volume{
     $count: $count +1;
     #episode5_image#{$count} {
-        @include make-image($images,380px,jpg,cover)
+        @include make-image($images,165px,jpg,cover,center);
+        @media (min-width: $screen-md) {
+          @include make-image($images,380px,jpg,cover,center);
+        }
+        @media (min-width: $screen-lg) {
+          @include make-image($images,380px,jpg,cover,center);
+        }
     }
   }
 }
@@ -195,17 +228,30 @@ h3{
   .content-article{
     margin-right: 40px;
   }
+  .tag-image2{
+    @include make-image(fb,20px,png,contain,left);
+  }
+  .tag-image1, .tag-image3{
+      @include make-image(twitter,30px,svg,contain,left);
+  }
   $count:0;
   @each $images in design, gallery, Method_Podcast{
     $count: $count +1;
     #episode6_image#{$count} {
-        @include make-image($images,250px,jpg,cover)
+        @include make-image($images,125px,jpg,cover,center);
+        @media (min-width: $screen-md) {
+          @include make-image($images,250px,jpg,cover,center);
+        }
+        @media (min-width: $screen-lg) {
+          @include make-image($images,250px,jpg,cover,center);
+        }
     }
   }
 }
+
 .episode7{
   margin-bottom: 7%;
-  .episode7--left{
+  &__left{
     width: 46%;
     padding-right: 4%;
   }
@@ -216,7 +262,13 @@ h3{
   @each $images in span, material, design_never{
     $count: $count +1;
     #episode7_image#{$count} {
-        @include make-image($images,380px,jpg,cover)
+        @include make-image($images,165px,jpg,cover,center);
+        @media (min-width: $screen-md) {
+          @include make-image($images,380px,jpg,cover,center);
+        }
+        @media (min-width: $screen-lg) {
+          @include make-image($images,380px,jpg,cover,center);
+        }
     }
   }
 }
