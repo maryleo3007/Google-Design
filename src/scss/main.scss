@@ -58,7 +58,9 @@ h3{
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
+.hr-footer{
+  background-color: $grey-light;
+}
 .header{
   .row{
     margin: 5% auto;
@@ -250,7 +252,6 @@ h3{
     }
   }
 }
-
 .episode7{
   margin-bottom: 7%;
   &__left{
@@ -272,5 +273,16 @@ h3{
           @include make-image($images,380px,jpg,cover,center);
         }
     }
+  }
+}
+.episode8{
+  margin-top: 3%;
+  margin-bottom: 7%;
+}
+.episode9{
+  margin-top: 3%;
+  margin-bottom: 7%;
+  .episode9_image{
+    @include make-image(google-g,50px,svg,contain,left);
   }
 }
